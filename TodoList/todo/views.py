@@ -20,7 +20,7 @@ def todo(request):
     
     content = {'wait_list': wait_list, 'ing_list': ing_list}
     # render(request, 템플릿 경로, 데이터{})
-    # - 데이터{} : 템플릿에 디이터를 전달
+    # - 데이터{} : 템플릿에 데이터를 전달
     return render(request, 'todo/todo.html', content)
 
 def create(request):
