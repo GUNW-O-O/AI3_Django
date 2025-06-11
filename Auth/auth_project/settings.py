@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-b_g1*mz*3x6i6uczn&og%%1*j@a$+&v3*fod&e8%_(l@ct#=b+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*'] # 모든 호스트 허용
 
 
 # Application definition
@@ -130,3 +130,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
+# 에러 페이지 설정
+handler403 = 'post.errors.custom_permission_denied_view'
+handler404 = 'post.errors.custom_page_not_found_view'
